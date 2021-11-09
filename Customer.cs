@@ -5,14 +5,12 @@ namespace Customers_System
     class Customer
     {
         public string Name;
-        public int id;
-        public short PhoneNumber;
+        public string PhoneNumber;
         public readonly List<Order> Orders = new List<Order>();
 
-        public Customer(string name, int id, short phoneNumber)
+        public Customer(string name, string phoneNumber)
         {
             this.Name = name;
-            this.id = id;
             this.PhoneNumber = phoneNumber;
         }
 

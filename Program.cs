@@ -8,6 +8,8 @@ namespace Customers_System
 {
     class Program
     {
+        public static bool OrderEnded = false;
+
         public static void GetMenu()
         {
             foreach(Item item in Menu.items)
@@ -18,7 +20,7 @@ namespace Customers_System
 
         static void Main(string[] args)
         {
-            List<Customer> customers = new List<Customer>();
+            List<Customer> Ourcustomers = new List<Customer>();
 
             int OrderNumber = 0;
 
@@ -27,32 +29,32 @@ namespace Customers_System
                 Console.Write("Enter Command: ");
                 string command = Console.ReadLine();
 
-
                 if(command == "add order")
                 {
                     OrderNumber++;
-                    int CustomerNumber;
+                    string CustomerNumber;
                     while (true)
                     {
+                        if (OrderEnded == true) break;
                         Console.WriteLine("Old Customer Or New Customer? Answer With old, new");
                         string input = Console.ReadLine();
+
 
                         if (input == "old")
                         {
                             bool FoundCustomer = false;
                             Console.Write("Enter Phone Number: ");
-                            CustomerNumber = Convert.ToInt32(Console.ReadLine());
+                            CustomerNumber = Console.ReadLine();
 
                             Customer SelectedCusetomer;
 
-                            foreach(Customer customer in customers)
+                            foreach(Customer customer in Ourcustomers)
                             {
                                 if(customer.PhoneNumber == CustomerNumber)
                                 {
                                     FoundCustomer = true;
                                     Console.WriteLine("Customer Verified!!");
                                     Console.WriteLine(customer.Name);
-                                    Console.WriteLine(customer.id);
                                     Console.WriteLine(customer.PhoneNumber);
 
                                     SelectedCusetomer = customer;
@@ -95,6 +97,15 @@ namespace Customers_System
                             Console.WriteLine("Unknown Command!!");
                         }
                     }
+                }
+
+                else if(command == "add customer")
+                {
+                    string CustomerNumber = Console.ReadLine();
+                    string CustomerName = Console.ReadLine();
+
+                    Customer addedCusotmer = new Customer(CustomerName, CustomerNumber);
+                    Ourcustomers.Add(addedCusotmer);
                 }
 
                 else if(command == "exit")

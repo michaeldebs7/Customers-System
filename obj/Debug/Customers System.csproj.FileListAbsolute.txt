@@ -5,3 +5,10 @@ E:\TUTS\VS REPO\Customers System\obj\Debug\Customers System.csproj.AssemblyRefer
 E:\TUTS\VS REPO\Customers System\obj\Debug\Customers System.csproj.CoreCompileInputs.cache
 E:\TUTS\VS REPO\Customers System\obj\Debug\Customers System.exe
 E:\TUTS\VS REPO\Customers System\obj\Debug\Customers System.pdb
+E:\TUTS\VS REPO\Customers-System\bin\Debug\Customers System.exe.config
+E:\TUTS\VS REPO\Customers-System\bin\Debug\Customers System.exe
+E:\TUTS\VS REPO\Customers-System\bin\Debug\Customers System.pdb
+E:\TUTS\VS REPO\Customers-System\obj\Debug\Customers System.csproj.AssemblyReference.cache
+E:\TUTS\VS REPO\Customers-System\obj\Debug\Customers System.csproj.CoreCompileInputs.cache
+E:\TUTS\VS REPO\Customers-System\obj\Debug\Customers System.exe
+E:\TUTS\VS REPO\Customers-System\obj\Debug\Customers System.pdb

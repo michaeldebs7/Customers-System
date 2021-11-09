@@ -5,8 +5,6 @@ namespace Customers_System
 {
     class Order
     {
-
-
         public int OrderNumber;
         short OrderPrice;
         int ItemCount;
@@ -19,8 +17,10 @@ namespace Customers_System
 
         public void addOrder(params Item[] Items)
         {
+            List<Item> OrderItems = new List<Item>();
             while (true)
             {
+                if (Program.OrderEnded == true) break;
                 Console.WriteLine("What Do You Like To Order?");
                 string input = Console.ReadLine();
 
@@ -30,19 +30,31 @@ namespace Customers_System
 
                 }
 
+                else if(input == "done")
+                {
+                    Program.OrderEnded = true;
+                    break;
+                }
+
                 else
                 {
-
+                    foreach(Item item in Menu.items)
+                    {
+                        if (input == item.ItemName)
+	                    {
+                            OrderItems.Add(item);
+                        }
+                    }
                 }
             }
             
 
 
 
-            foreach(Item item in Items)
+            foreach(Item item in OrderItems)
             {
                 System.Console.WriteLine(item);
-                ItemCount = Items.Length;
+                ItemCount = OrderItems.Count;
             }
         }
     }
